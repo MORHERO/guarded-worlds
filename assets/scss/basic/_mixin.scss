@@ -1,0 +1,21 @@
+@mixin doc-width {
+	max-width: $doc-width;
+	padding: 2em 4em;
+	margin: 0px auto;
+	@media only screen and (max-width: 960px) {
+		padding: 2em 2em;
+	}
+}
+@mixin no-text-select {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+						supported by Chrome, Edge, Opera and Firefox */
+}
+
+@mixin white-to-blue {
+	filter: brightness(0.22) sepia(1) hue-rotate(200deg) saturate(6);//CHANGE #393dac -> #3A54A5
+}

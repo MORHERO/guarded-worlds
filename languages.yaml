@@ -1,0 +1,74 @@
+de:
+  CLIENT:
+    SETTINGS:
+      BLANK_PAGE_INFO: EINE BLANK SEITE SOLLTE AUF DIE STARTSEITE WEITERGELEITET WERDEN DA DIESE NUR FÜR URL GENERATION VERWENDET WERDEN SOLL
+      COLLECTION:
+        COUNT_MAX: Maximale Anzahl
+        INDUSTRY: Branchen Listen Einstellungen
+        ITEMS: Inhalte
+        ORDER: Sortierung
+        ORDER_BY: Sortierung bei ...
+        PAGINATION: Seitennummerierung
+        TAXONOMY: URL Filter
+      HEADER:
+        GENERAL: Header Einstellungen
+        CONTENT: Header Inhalt
+        MEDIA: Header Media
+      LEFT: Links
+      RIGHT: Rechts
+      MODULAR:
+        BASE:
+          GENERAL: Allgemeine Einstellungen
+          ALIGN: Ausrichtung
+          MEDIA: Media Einstellungen
+          REDIRECT: Weiterleitung
+          THEME: Theme Einstellungen
+      NAVIGATION:
+        GENERAL: Navigations  Einstellungen
+        ANCHOR: Anker
+        TITLE: Titel
+      TEXT: Textinhalt
+      THEME:
+        WHITE: Weißes Theme (Standard)
+        DARK: Dunkles Theme
+        GREY: Graues Theme
+      OVERLINE: Overline
+    REDIRECT:
+      BASE: Weiterleitung
+      TITLE: Button Text
+      INTERNAL: Interne Weiterleitung
+      EXTERNAL: Externe Weiterleitung
+    THEME_SETTINGS:
+      GENERAL: Theme Einstellungen
+      CONTACT:
+        CITY: Stadt
+        DESCRIPTION: Kontakt Einstellungen für den Footer und die Navigation
+        MAIL: Mailadresse
+        NAME: Name
+        PHONE: Telefonnummer
+        PLZ: Postleitzahl
+        SECTION: Kontakt Einstellungen
+        STREET: Straße, Hausnummer
+      FOOTER_NAV:
+        DESCRIPTION: Verlinkungen im Footer
+        SECTION: Footer Navigation
+        FIRST_SECTION: Erste Spalte Verlinkungen
+        SECOND_SECTION: Zweite Spalte Verlinkungen
+      LOGO:
+        DESCRIPTION: Großes Logo das für die Navigation verwendet wird.
+        DESCRIPTION_ICON: Kleines Logo das für den Footer verwendet wird.
+        SECTION: Logo Einstellungen
+        ICON: Logo Icon Einstellungen
+      SOCIAL_MEDIA:
+        DESCRIPTION: Social Media verlinkungen im Footer
+        SECTION: Social Media Einstellungen
+    MEDIA:
+      GENERAL: Media Einstellungen
+      PREVIEW_SELECT: Vorschaubild auswählen
+      PREVIEW_UPLOAD: Vorschaubild hochladen
+      SELECT: Bild auswählen
+      UPLOAD: Bild hochladen
+      LEFT: Bild links
+      RIGHT: Bild rechts
+      ALT: Alternativ text
+      TITLE: Bild titel

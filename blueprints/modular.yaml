@@ -1,0 +1,194 @@
+title: modular
+
+extends@: base
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            header.nav:
+              ordering@: 2
+              type: fieldset
+              title: CLIENT.SETTINGS.NAVIGATION.GENERAL
+              icon: navicon
+              collapsed: true
+              collapsible: true
+
+              fields:
+                header.nav.list:
+                  type: list
+
+                  fields:
+                    .title:
+                      type: text
+                      label: CLIENT.SETTINGS.NAVIGATION.TITLE
+                    .anchor:
+                      type: text
+                      label: CLIENT.SETTINGS.NAVIGATION.ANCHOR
+            
+            header.head:
+              ordering@: 3
+              type: fieldset
+              title: CLIENT.SETTINGS.HEADER.GENERAL
+              icon: image
+              collapsed: true
+              collapsible: true
+
+              fields:
+                header.head.base.size:
+                  type: selectize
+                  size: large
+                  label: CLIENT.SETTINGS.MODULAR.BASE.SIZE
+                  help: CLIENT.SETTINGS.MODULAR.BASE.SIZE_HELP
+                  classes: fancy
+                  selectize:
+                      options:
+                          - text: Klein
+                            value: 'header-small'
+                          - text: Mittel
+                            value: 'header-medium'
+                          - text: Vollbild
+                            value: 'header-large'
+                  default: header-large
+                  validate:
+                      type: commalist
+                columns:
+                  type: columns
+                  fields:
+
+                    column1:
+                      type: column
+                      fields:
+
+                        header.head:
+                          type: section
+                          title: CLIENT.SETTINGS.HEADER.MEDIA
+                          fields:
+
+                            header.head.media.src:
+                              type: filepicker
+                              label: CLIENT.MEDIA.SELECT
+                              folder: 'user://uploads/header'
+                              preview_images: true
+                              accept:
+                                - .png
+                                - .jpg
+                                - .svg
+                                - .mp4
+                              validate:
+                                required: true
+                            header.head.media.upload:
+                              type: file
+                              label: CLIENT.MEDIA.UPLOAD
+                              multiple: true
+                              destination: 'user://uploads/header'
+                              avoid_overwriting: true
+                              accept:
+                                - .png
+                                - .jpg
+                                - .svg
+                                - .mp4
+
+                    column2:
+                      type: column
+                      fields:
+                        header.head.text:
+                          type: section
+                          title: CLIENT.SETTINGS.HEADER.CONTENT
+                          fields:
+
+                            header.head.text.content:
+                              type: text
+                              label: CLIENT.SETTINGS.TEXT
+
+                            header.head.redirect.text:
+                              type: text
+                              label: CLIENT.REDIRECT.TITLE
+                            header.head.redirect.internal:
+                              type: pages
+                              label: CLIENT.REDIRECT.INTERNAL
+                              start_route: ''
+                              show_all: false
+                              show_modular: false
+                              show_root: false
+                              default: -
+                              options:
+                                0: -
+                            header.head.redirect.external:
+                              type: text
+                              label: CLIENT.REDIRECT.EXTERNAL
+
+        module:
+          type: tab
+          title: Modul Config
+
+          fields:
+
+            content_title:
+              type: spacer
+              title: Content Definition
+
+            header.content.items:
+              type: textarea
+              yaml: true
+              label: Items
+              default: '@self.modular'
+              validate:
+                type: yaml
+
+            header.content.limit:
+              type: text
+              label: Max Item Count
+              default: 50
+              validate:
+                required: true
+                type: int
+                min: 1
+
+            header.content.order.by:
+              type: select
+              label: Order By
+              default: folder
+              options:
+                folder: Folder
+                title: Title
+                date: Date
+                default: Default
+
+            header.content.order.dir:
+              type: select
+              label: Order
+              default: asc
+              options:
+                asc: Ascending
+                desc: Descending
+
+            header.content.pagination:
+              type: toggle
+              label: Pagination
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header.content.url_taxonomy_filters:
+              type: toggle
+              label: URL Taxonomy Filters
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool

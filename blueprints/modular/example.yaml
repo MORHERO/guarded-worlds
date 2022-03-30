@@ -1,0 +1,21 @@
+title: modular-example
+
+extends@: base
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            header.modular.example:
+              ordering@: 2
+              type: text
+              label: EXAMPLE TEXT INPUT
+              style: vertical

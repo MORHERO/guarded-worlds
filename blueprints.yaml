@@ -1,0 +1,262 @@
+name: guarded-worlds
+slug: guarded-worlds
+type: theme
+version: 1.0.0
+description: guarded-worlds Grav Theme
+author:
+  name: MORHERO
+  email: dev@morhero.de
+  url: https://morhero.de
+
+form:
+  validation: loose
+
+  fields:
+    main:
+      type: section
+      title: CLIENT.THEME_SETTINGS.GENERAL
+      underline: true
+
+      fields:
+        columns:
+          type: columns
+          fields:
+
+            column1:
+              type: column
+              fields:
+
+                main.logo:
+                  type: fieldset
+                  title: CLIENT.THEME_SETTINGS.LOGO.SECTION
+                  text: CLIENT.THEME_SETTINGS.LOGO.DESCRIPTION
+                  icon: image
+                  collapsed: true
+                  collapsible: true
+
+                  fields:
+                    main.logo.src:
+                      type: filepicker
+                      label: CLIENT.MEDIA.SELECT
+                      folder: 'user://uploads/theme/logo'
+                      preview_images: true
+                      accept:
+                        - .png
+                        - .jpg
+                        - .svg
+                      validate:
+                        required: true
+                    main.logo.alt:
+                      type: text
+                      label: CLIENT.MEDIA.ALT
+                    main.logo.title:
+                      type: text
+                      label: CLIENT.MEDIA.TITLE
+                    main.logo.upload:
+                      type: file
+                      label: CLIENT.MEDIA.UPLOAD
+                      multiple: true
+                      destination: 'user://uploads/theme/logo'
+                      avoid_overwriting: true
+                      accept:
+                        - .png
+                        - .jpg
+                        - .svg
+            column2:
+              type: column
+              fields:
+                main.logo_icon:
+                  type: fieldset
+                  title: CLIENT.THEME_SETTINGS.LOGO.ICON
+                  text: CLIENT.THEME_SETTINGS.LOGO.DESCRIPTION_ICON
+                  icon: image
+                  collapsed: true
+                  collapsible: true
+
+                  fields:
+                    main.logo_icon.src:
+                      type: filepicker
+                      label: CLIENT.MEDIA.SELECT
+                      folder: 'user://uploads/theme/logo'
+                      preview_images: true
+                      accept:
+                        - .png
+                        - .jpg
+                        - .svg
+                      validate:
+                        required: true
+                    main.logo_icon.alt:
+                      type: text
+                      label: CLIENT.MEDIA.ALT
+                    main.logo_icon.title:
+                      type: text
+                      label: CLIENT.MEDIA.TITLE
+                    main.logo_icon.upload:
+                      type: file
+                      label: CLIENT.MEDIA.UPLOAD
+                      multiple: true
+                      destination: 'user://uploads/theme/logo'
+                      avoid_overwriting: true
+                      accept:
+                        - .png
+                        - .jpg
+                        - .svg
+        main.contact:
+          type: fieldset
+          title: CLIENT.THEME_SETTINGS.CONTACT.SECTION
+          text: CLIENT.THEME_SETTINGS.CONTACT.DESCRIPTION
+          icon: comment-o
+          collapsed: true
+          collapsible: true
+          fields:
+            columns:
+              type: columns
+              fields:
+
+                column1:
+                  type: column
+                  fields:
+        
+                    main.contact.street:
+                      type: text
+                      label: CLIENT.THEME_SETTINGS.CONTACT.STREET
+                    main.contact.plz:
+                      type: text
+                      label: CLIENT.THEME_SETTINGS.CONTACT.PLZ
+                    main.contact.city:
+                      type: text
+                      label: CLIENT.THEME_SETTINGS.CONTACT.CITY
+                
+                column2:
+                  type: column
+                  fields:
+                    main.contact.name:
+                      type: text
+                      label: CLIENT.THEME_SETTINGS.CONTACT.NAME
+                    main.contact.mail:
+                      type: text
+                      label: CLIENT.THEME_SETTINGS.CONTACT.MAIL
+                    main.contact.phone:
+                      type: text
+                      label: CLIENT.THEME_SETTINGS.CONTACT.PHONE
+        main.socialmedia:
+          type: fieldset
+          title: CLIENT.THEME_SETTINGS.SOCIAL_MEDIA.SECTION
+          text: CLIENT.THEME_SETTINGS.SOCIAL_MEDIA.DESCRIPTION
+          icon: paper-plane-o
+          collapsed: true
+          collapsible: true
+          fields:
+
+            main.socialmedia.list:
+              type: list
+
+              fields:
+                .media.src:
+                  type: filepicker
+                  label: CLIENT.MEDIA.SELECT
+                  folder: 'user://uploads/social-media'
+                  preview_images: true
+                  accept:
+                    - .png
+                    - .jpg
+                    - .svg
+                  validate:
+                    required: true
+                .title:
+                  type: text
+                  label: CLIENT.MEDIA.TITLE
+                .alt:
+                  type: text
+                  label: CLIENT.MEDIA.ALT
+                .media.upload:
+                  type: file
+                  label: CLIENT.MEDIA.UPLOAD
+                  multiple: true
+                  destination: 'user://uploads/social-media'
+                  avoid_overwriting: true
+                  accept:
+                    - .png
+                    - .jpg
+                    - .svg
+                .link:
+                  type: text
+                  label: CLIENT.REDIRECT.BASE
+
+        main.footer_nav:
+          type: fieldset
+          title: CLIENT.THEME_SETTINGS.FOOTER_NAV.SECTION
+          text: CLIENT.THEME_SETTINGS.FOOTER_NAV.DESCRIPTION
+          icon: external-link
+          collapsed: true
+          collapsible: true
+          fields:
+
+            columns:
+              type: columns
+              fields:
+
+                column1:
+                  type: column
+                  title: CLIENT.THEME_SETTINGS.FOOTER_NAV.FIRST_SECTION
+                  fields:
+                    main.footer_nav.first.title:
+                      type: text
+                      label: CLIENT.SETTINGS.NAVIGATION.TITLE
+                    main.footer_nav.first.list:
+                      type: list
+
+                      fields:
+                        .title:
+                          type: text
+                          label: CLIENT.REDIRECT.TITLE
+                        .internal:
+                          type: pages
+                          label: CLIENT.REDIRECT.INTERNAL
+                          start_route: ''
+                          show_all: false
+                          show_modular: false
+                          show_root: false
+                        .external:
+                          type: text
+                          label: CLIENT.REDIRECT.EXTERNAL
+                column2:
+                  type: column
+                  title: CLIENT.THEME_SETTINGS.FOOTER_NAV.SECOND_SECTION
+                  fields:
+                    main.footer_nav.second.title:
+                      type: text
+                      label: CLIENT.SETTINGS.NAVIGATION.TITLE
+                    main.footer_nav.second.list:
+                      type: list
+
+                      fields:
+                        .title:
+                          type: text
+                          label: CLIENT.REDIRECT.TITLE
+                        .internal:
+                          type: pages
+                          label: CLIENT.REDIRECT.INTERNAL
+                          start_route: ''
+                          show_all: false
+                          show_modular: false
+                          show_root: false
+                        .external:
+                          type: text
+                          label: CLIENT.REDIRECT.EXTERNAL
+
+
+        main.industry:
+          type: section
+          title: CLIENT.THEME_SETTINGS.INDUSTRY.SECTION
+          fields:
+            header.industry.list:
+              type: list
+
+              fields:
+                .title:
+                  type: text
+                  label: CLIENT.THEME_SETTINGS.INDUSTRY.TITLE
+                .color:
+                  type: text
+                  label: CLIENT.THEME_SETTINGS.INDUSTRY.COLOR

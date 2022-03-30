@@ -1,0 +1,185 @@
+
+//*-----|| fonts-face ||--------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+$font-path: '../fonts/';
+$font-folder: 'FONT-TITLE/';
+$font-name: 'FONT-TITLE';
+$font-text-title: 'FONT-TITLE';
+$font-heading-title: 'FONT-TITLE';
+
+@font-face {
+	font-family: $font-text-title;
+	src: url($font-path + $font-folder + $font-name + '.woff') format('woff'),
+		url($font-path + $font-folder + $font-name + '.ttf') format('truetype'),
+		url($font-path + $font-folder + $font-name + '.svg#') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$font-folder: 'FONT-TITLE/';
+$font-name: 'FONT-TITLE';
+@font-face {
+	font-family: $font-heading-title;
+	src: url($font-path + $font-folder + $font-name + '.woff') format('woff'),
+		url($font-path + $font-folder + $font-name + '.ttf') format('truetype'),
+		url($font-path + $font-folder + $font-name + '.svg#') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+/*-----|| initial import ||----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+@import "basic/variables";
+@import "basic/mixin";
+@import "basic/debug";
+
+
+
+/*-----|| custom global definitions ||-----------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+html, body {
+	margin: 0;
+	background-color: $cl-main;
+	color: $cl-font;
+	font-size: $font-xs;
+	overflow-x: hidden;
+}
+
+.flex {
+	display: flex;
+	&.centered {
+		justify-content: center;
+	}
+}
+
+header {
+	position: relative;
+	overflow: hidden;
+}
+
+section {
+	margin-bottom: 120px!important;
+
+	@media only screen and (max-width: 640px) {
+		margin-bottom: 60px!important;
+	}
+}
+
+/*-----|| text ||--------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+p, span, ul, ol, li, label {
+	color: $cl-font;
+	font-family: $font-text;
+	margin: 0px;
+}
+a, a:active {
+	color: $cl-main-special;
+	font-family: $font-text;
+	margin: 0px;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6, .heading {
+	color: $cl-font;
+	font-family: $font-heading;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0px 0px 12px 0px;
+}
+
+h1, .h1 {
+	font-size: $font-supersize;
+}
+h2, .h2 {
+	font-size: $font-xxl;
+}
+h3, .h3 {
+	font-size: $font-xl;
+}
+h4, .h4 {
+	font-size: $font-l;
+}
+h5, .h5 {
+	font-size: $font-m;
+}
+h6, .h6 {
+	font-size: $font-s;
+}
+
+@media only screen and (max-width: 1080px) {
+	h1, .h1 {
+		font-size: $font-xxl;
+	}
+	h2, .h2 {
+		font-size: $font-xl;
+	}
+	h3, .h3 {
+		font-size: $font-l;
+	}
+	h4, .h4 {
+		font-size: $font-m;
+	}
+	h5, .h5 {
+		font-size: $font-s;
+	}
+	h6, .h6 {
+		font-size: $font-xs;
+	}
+}
+@media only screen and (max-width: 480px) {
+	h1, .h1 {
+		font-size: $font-xl;
+	}
+	h2, .h2 {
+		font-size: $font-l;
+	}
+	h3, .h3 {
+		font-size: $font-m;
+	}
+	h4, .h4 {
+		font-size: $font-s;
+	}
+	h5, .h5 {
+		font-size: $font-xs;
+	}
+	h6, .h6 {
+		font-size: $font-xxs;
+	}
+	p, span, ul, ol, li, label, a, b, i {
+		font-size: 16px;
+		line-height: 1.2em;
+	}
+}
+
+/*-----|| modular ||-------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+[modular] {
+	width: 100%;
+	padding:100px 0px 100px;
+	>.inner {
+		max-width: $doc-width-s;
+		margin:0px auto;
+		padding: 0px 40px;
+	}
+	@media only screen and (max-width: 820px) {
+		>.inner {
+			padding: 0px 20px;
+		}
+	}
+	@media only screen and (max-width: 480px) {
+		padding:60px 0px 60px;
+	}
+}
+
+/*-----|| import content ||----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+@import "templates/navigation";
+@import "templates/header";
+@import "templates/footer";
+
+@import "modules/modular-example";
